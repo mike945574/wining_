@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PIXEL CLASH — Only One Walks Away</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="cabinet">
+
+  <div id="screen">
+
+    <canvas id="game" width="320" height="180"></canvas>
+
+    <div id="crt">
+      <div id="scanlines"></div>
+      <div id="vignette"></div>
+      <div id="flicker"></div>
+      <div id="flash"></div>
+    </div>
+
+    <div id="hud">
+      <div class="bar-block left">
+        <div class="fighter-name" id="p1name">SHADOW</div>
+        <div class="bar-shell"><div class="bar-fill" id="p1bar"></div></div>
+        <div class="special-shell"><div class="special-fill" id="p1special"></div></div>
+      </div>
+
+      <div class="round-indicator" id="roundDots">
+        <span class="dot" data-p="1" data-r="1"></span>
+        <span class="dot" data-p="1" data-r="2"></span>
+        <span class="vs">VS</span>
+        <span class="dot" data-p="2" data-r="2"></span>
+        <span class="dot" data-p="2" data-r="1"></span>
+      </div>
+
+      <div class="bar-block right">
+        <div class="fighter-name" id="p2name">RONIN</div>
+        <div class="bar-shell"><div class="bar-fill flip" id="p2bar"></div></div>
+        <div class="special-shell"><div class="special-fill flip" id="p2special"></div></div>
+      </div>
+    </div>
+
+    <div id="comboPopup"></div>
+    <div id="centerText"></div>
+
+    <button id="muteBtn" title="Toggle music">♪</button>
+
+    <div id="menu">
+      <div id="menuInner">
+        <h1 id="title">PIXEL CLASH</h1>
+        <p id="tagline">Only One Walks Away.</p>
+
+        <div id="menuStage">
+
+          <!-- STEP 1: difficulty -->
+          <div class="menu-step" id="stepDifficulty">
+            <p class="menu-label">Select Opponent AI</p>
+            <div class="menu-options">
+              <button class="menu-btn" data-diff="easy">EASY</button>
+              <button class="menu-btn" data-diff="medium">MEDIUM</button>
+              <button class="menu-btn" data-diff="impossible">IMPOSSIBLE</button>
+            </div>
+          </div>
+
+          <!-- STEP 2: character select -->
+          <div class="menu-step hidden" id="stepCharacter">
+            <p class="menu-label">Choose Your Fighter</p>
+            <div class="char-grid" id="charGrid"></div>
+            <div class="char-preview" id="charPreview">
+              <canvas id="charPreviewCanvas" width="48" height="48"></canvas>
+              <div class="char-stats" id="charStats"></div>
+            </div>
+            <button class="menu-back" id="backToDiff">‹ back</button>
+          </div>
+
+          <!-- STEP 3: arena select -->
+          <div class="menu-step hidden" id="stepArena">
+            <p class="menu-label">Choose Your Arena</p>
+            <div class="arena-grid" id="arenaGrid"></div>
+            <button class="menu-back" id="backToChar">‹ back</button>
+          </div>
+
+        </div>
+
+        <p id="controlsHint">
+          A / D move &nbsp;·&nbsp; W jump &nbsp;·&nbsp; S block &nbsp;·&nbsp; J punch &nbsp;·&nbsp; K kick &nbsp;·&nbsp; L special
+        </p>
+        <p id="soundHint">click anywhere to enable sound</p>
+      </div>
+    </div>
+
+    <div id="matchEnd">
+      <div id="matchEndInner">
+        <h2 id="matchEndTitle">SHADOW WINS</h2>
+        <button id="rematchBtn">REMATCH</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="cabinetLabel">PIXEL CLASH</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
